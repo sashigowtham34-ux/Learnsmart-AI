@@ -1,0 +1,281 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Student academic profile and study preferences",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "description": "User unique identifier matching auth UID"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 100,
+          "minLength": 2,
+          "description": "Student full legal or preferred name"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 128,
+          "description": "Student academic email address"
+        },
+        "course": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "Degree or academic program (e.g., B.Tech CSE)"
+        },
+        "college": {
+          "type": "string",
+          "maxLength": 150,
+          "description": "Educational institution or university"
+        },
+        "semester": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "Current academic semester or term"
+        },
+        "preferredLanguage": {
+          "type": "string",
+          "enum": ["English", "Telugu", "Bilingual"],
+          "description": "Primary instructional language"
+        },
+        "explanationLevel": {
+          "type": "string",
+          "enum": ["Beginner", "Intermediate", "Advanced"],
+          "description": "Preferred depth of AI explanations"
+        },
+        "dailyStudyTimeMinutes": {
+          "type": "integer",
+          "description": "Allocated daily study budget in minutes"
+        },
+        "examName": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "Upcoming target examination"
+        },
+        "examDate": {
+          "type": "string",
+          "maxLength": 30,
+          "description": "Target exam date in ISO format"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when account was created"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of most recent profile modification"
+        }
+      },
+      "required": ["id", "name", "email", "course", "college", "semester"]
+    },
+    "QuizAttempt": {
+      "title": "QuizAttempt",
+      "description": "Completed topic assessment record",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "description": "Unique quiz attempt record ID"
+        },
+        "userId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "description": "Owner student UID"
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 150,
+          "description": "Title of the quiz assessment"
+        },
+        "subject": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Academic subject"
+        },
+        "topic": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Assessed topic"
+        },
+        "score": {
+          "type": "integer",
+          "description": "Percentage score (0 to 100)"
+        },
+        "totalQuestions": {
+          "type": "integer",
+          "description": "Number of questions in assessment"
+        },
+        "correctAnswers": {
+          "type": "integer",
+          "description": "Number of questions answered correctly"
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["Beginner", "Intermediate", "Advanced"],
+          "description": "Assessment difficulty tier"
+        },
+        "completedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Submission timestamp"
+        }
+      },
+      "required": ["id", "userId", "subject", "topic", "score", "totalQuestions", "correctAnswers", "completedAt"]
+    },
+    "StudyPlanActivity": {
+      "title": "StudyPlanActivity",
+      "description": "Individual daily study schedule activity",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "description": "Unique plan activity ID"
+        },
+        "userId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "description": "Owner student UID"
+        },
+        "date": {
+          "type": "string",
+          "maxLength": 30,
+          "description": "Scheduled date (YYYY-MM-DD)"
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 180,
+          "description": "Activity action title"
+        },
+        "subject": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Academic subject"
+        },
+        "topic": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Target topic"
+        },
+        "estimatedMinutes": {
+          "type": "integer",
+          "description": "Estimated duration in minutes"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["lesson", "practice", "revision", "quiz"],
+          "description": "Type of learning session"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "completed", "postponed"],
+          "description": "Execution status"
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["high", "medium", "low"],
+          "description": "Priority tier"
+        },
+        "reason": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "Pedagogical explanation for scheduling this activity"
+        }
+      },
+      "required": ["id", "userId", "date", "title", "subject", "topic", "estimatedMinutes", "type", "status", "priority", "reason"]
+    },
+    "TopicMasteryRecord": {
+      "title": "TopicMasteryRecord",
+      "description": "Topic-wise performance and mastery status",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "description": "Topic record ID"
+        },
+        "userId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "description": "Owner student UID"
+        },
+        "subjectId": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Subject identifier"
+        },
+        "subjectName": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Subject display name"
+        },
+        "topicName": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Topic name"
+        },
+        "score": {
+          "type": "integer",
+          "description": "Mastery score percentage (0 to 100)"
+        },
+        "attempts": {
+          "type": "integer",
+          "description": "Number of assessments completed"
+        },
+        "lastAssessed": {
+          "type": "string",
+          "maxLength": 30,
+          "description": "Date of latest assessment"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["critical", "weak", "proficient", "mastered"],
+          "description": "Pedagogical mastery tier"
+        },
+        "recommendation": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "Pedagogical rationale"
+        },
+        "recommendedAction": {
+          "type": "string",
+          "maxLength": 150,
+          "description": "Next actionable step"
+        }
+      },
+      "required": ["id", "userId", "subjectId", "subjectName", "topicName", "score", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Student private profile document containing academic settings"
+    },
+    "/users/{userId}/quizAttempts/{quizId}": {
+      "schema": "QuizAttempt",
+      "description": "Private assessment attempts belonging to the authenticated student"
+    },
+    "/users/{userId}/studyPlans/{planId}": {
+      "schema": "StudyPlanActivity",
+      "description": "Private study schedule items belonging to the authenticated student"
+    },
+    "/users/{userId}/topicMastery/{topicId}": {
+      "schema": "TopicMasteryRecord",
+      "description": "Private topic mastery scores and recommendations belonging to the student"
+    }
+  }
+}

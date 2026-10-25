@@ -1,0 +1,6 @@
+{
+  "name": "LearnSmart AI",
+  "description": "Your Personal AI Tutor — Learn Smarter, Every Day. Personalized learning platform with Gemini-powered AI tutoring, smart quizzes, weakness detection, and adaptive study planning for students.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

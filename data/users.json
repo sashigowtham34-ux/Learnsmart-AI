@@ -1,0 +1,13 @@
+[
+  {
+    "id": "demo-student-rahul",
+    "name": "Rahul Sharma",
+    "email": "rahul.sharma@engg.edu",
+    "hash": "2f27a03fa04353fdf48690f2a8904c274a3712b5fc09d8154ab9a0f7ed138eb5e59cfb9ce8c60c2b5a53b342c194783d942d1b20e773d36d75d9e6cbcc2220f7",
+    "salt": "dfa89b7ed519f3a4dca5f6b2769bf6e3",
+    "course": "B.Tech Computer Science & Engineering",
+    "college": "JNTU Institute of Engineering & Technology",
+    "semester": "Semester 1",
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  }
+]

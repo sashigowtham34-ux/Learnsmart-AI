@@ -1,0 +1,598 @@
+{
+  "activeProfileId": "demo-student-rahul",
+  "profile": {
+    "id": "demo-student-rahul",
+    "name": "Rahul Sharma",
+    "email": "rahul.sharma@engg.edu",
+    "course": "B.Tech Computer Science & Engineering",
+    "college": "JNTU Institute of Engineering & Technology",
+    "semester": "Semester 1",
+    "avatarUrl": "/src/assets/images/avatar_student_rahul_1791958434281.jpg",
+    "enrolledSubjects": [
+      "C Programming",
+      "Python Programming",
+      "Engineering Mathematics",
+      "Engineering Physics"
+    ],
+    "learningGoals": [
+      "Clear Midterm Exams with 90%+ in Programming",
+      "Master Pointer manipulation and dynamic memory allocation in C",
+      "Gain strong intuition for Linear Algebra & Eigenvalues",
+      "Prepare for First-Year Technical Viva and Lab Assessments"
+    ],
+    "preferredLanguage": "English",
+    "dailyStudyTimeMinutes": 90,
+    "explanationLevel": "Intermediate",
+    "examName": "First Semester Mid-Term Examinations",
+    "examDate": "2026-11-15",
+    "notificationSettings": {
+      "dailyReminders": true,
+      "quizAlerts": true,
+      "spacedRevision": true
+    },
+    "isSampleData": true
+  },
+  "subjects": [
+    {
+      "id": "subj-c",
+      "name": "C Programming",
+      "code": "CS101",
+      "category": "Computer Science",
+      "description": "Procedural programming, memory models, pointers, dynamic memory, structs and file streams.",
+      "progressPercent": 64,
+      "topics": [
+        {
+          "id": "subj-c-t1",
+          "name": "Variables, Data Types & Operators",
+          "subjectId": "subj-c",
+          "subjectName": "C Programming",
+          "score": 88,
+          "attempts": 4,
+          "lastAssessed": "2026-10-10",
+          "status": "mastered",
+          "recommendation": "Score 85%+: Strong mastery. Recommend advanced application exercises or periodic review assessment to maintain retention.",
+          "recommendedAction": "Advanced Synthesis & Periodic Maintenance Quiz"
+        },
+        {
+          "id": "subj-c-t2",
+          "name": "Control Structures & Loops",
+          "subjectId": "subj-c",
+          "subjectName": "C Programming",
+          "score": 78,
+          "attempts": 3,
+          "lastAssessed": "2026-10-08",
+          "status": "proficient",
+          "recommendation": "Score 70%–84%: Good grasp. Recommend intermediate exercise sets and spaced revision sessions to solidify mastery.",
+          "recommendedAction": "Intermediate Problem Sets & Spaced Revision"
+        },
+        {
+          "id": "subj-c-t3",
+          "name": "Functions, Recursion & Storage Classes",
+          "subjectId": "subj-c",
+          "subjectName": "C Programming",
+          "score": 72,
+          "attempts": 3,
+          "lastAssessed": "2026-10-09",
+          "status": "proficient",
+          "recommendation": "Score 70%–84%: Good grasp. Recommend intermediate exercise sets and spaced revision sessions to solidify mastery.",
+          "recommendedAction": "Intermediate Problem Sets & Spaced Revision"
+        },
+        {
+          "id": "subj-c-t4",
+          "name": "Arrays & String Manipulation",
+          "subjectId": "subj-c",
+          "subjectName": "C Programming",
+          "score": 65,
+          "attempts": 4,
+          "lastAssessed": "2026-10-11",
+          "status": "weak",
+          "recommendation": "Score 40%–69%: Needs reinforcement. Recommend targeted practice questions, debugging exercises, and additional explanations.",
+          "recommendedAction": "Targeted Practice & Guided Problem Solving"
+        },
+        {
+          "id": "subj-c-t5",
+          "name": "Pointers & Dynamic Memory Allocation",
+          "subjectId": "subj-c",
+          "subjectName": "C Programming",
+          "score": 38,
+          "attempts": 5,
+          "lastAssessed": "2026-10-12",
+          "status": "critical",
+          "recommendation": "Score below 40%: Critical concept gap. Recommend reviewing core fundamentals and step-by-step guided examples before attempting quizzes.",
+          "recommendedAction": "Review Fundamentals & Step-by-Step AI Explanations"
+        },
+        {
+          "id": "subj-c-t6",
+          "name": "Structures, Unions & File I/O",
+          "subjectId": "subj-c",
+          "subjectName": "C Programming",
+          "score": 45,
+          "attempts": 2,
+          "lastAssessed": "2026-10-07",
+          "status": "weak",
+          "recommendation": "Score 40%–69%: Needs reinforcement. Recommend targeted practice questions, debugging exercises, and additional explanations.",
+          "recommendedAction": "Targeted Practice & Guided Problem Solving"
+        }
+      ]
+    },
+    {
+      "id": "subj-python",
+      "name": "Python Programming",
+      "code": "CS102",
+      "category": "Computer Science",
+      "description": "Python syntax, data structures, list comprehensions, object-oriented concepts, and modules.",
+      "progressPercent": 78,
+      "topics": [
+        {
+          "id": "subj-python-t1",
+          "name": "Basic Syntax, Variables & Conditionals",
+          "subjectId": "subj-python",
+          "subjectName": "Python Programming",
+          "score": 92,
+          "attempts": 5,
+          "lastAssessed": "2026-10-06",
+          "status": "mastered",
+          "recommendation": "Score 85%+: Strong mastery. Recommend advanced application exercises or periodic review assessment to maintain retention.",
+          "recommendedAction": "Advanced Synthesis & Periodic Maintenance Quiz"
+        },
+        {
+          "id": "subj-python-t2",
+          "name": "Lists, Tuples, Sets & Dictionaries",
+          "subjectId": "subj-python",
+          "subjectName": "Python Programming",
+          "score": 85,
+          "attempts": 4,
+          "lastAssessed": "2026-10-09",
+          "status": "mastered",
+          "recommendation": "Score 85%+: Strong mastery. Recommend advanced application exercises or periodic review assessment to maintain retention.",
+          "recommendedAction": "Advanced Synthesis & Periodic Maintenance Quiz"
+        },
+        {
+          "id": "subj-python-t3",
+          "name": "Functions, Lambdas & Scope",
+          "subjectId": "subj-python",
+          "subjectName": "Python Programming",
+          "score": 80,
+          "attempts": 3,
+          "lastAssessed": "2026-10-10",
+          "status": "proficient",
+          "recommendation": "Score 70%–84%: Good grasp. Recommend intermediate exercise sets and spaced revision sessions to solidify mastery.",
+          "recommendedAction": "Intermediate Problem Sets & Spaced Revision"
+        },
+        {
+          "id": "subj-python-t4",
+          "name": "OOP Concepts: Classes & Inheritance",
+          "subjectId": "subj-python",
+          "subjectName": "Python Programming",
+          "score": 62,
+          "attempts": 4,
+          "lastAssessed": "2026-10-11",
+          "status": "weak",
+          "recommendation": "Score 40%–69%: Needs reinforcement. Recommend targeted practice questions, debugging exercises, and additional explanations.",
+          "recommendedAction": "Targeted Practice & Guided Problem Solving"
+        },
+        {
+          "id": "subj-python-t5",
+          "name": "Exception Handling & File Operations",
+          "subjectId": "subj-python",
+          "subjectName": "Python Programming",
+          "score": 70,
+          "attempts": 2,
+          "lastAssessed": "2026-10-08",
+          "status": "proficient",
+          "recommendation": "Score 70%–84%: Good grasp. Recommend intermediate exercise sets and spaced revision sessions to solidify mastery.",
+          "recommendedAction": "Intermediate Problem Sets & Spaced Revision"
+        }
+      ]
+    },
+    {
+      "id": "subj-maths",
+      "name": "Engineering Mathematics",
+      "code": "MA101",
+      "category": "Mathematics",
+      "description": "Matrices, rank, linear systems, eigenvalues, differential calculus, multiple integrals, and vector analysis.",
+      "progressPercent": 66,
+      "topics": [
+        {
+          "id": "subj-maths-t1",
+          "name": "Matrices, Rank & Linear Systems",
+          "subjectId": "subj-maths",
+          "subjectName": "Engineering Mathematics",
+          "score": 82,
+          "attempts": 4,
+          "lastAssessed": "2026-10-05",
+          "status": "proficient",
+          "recommendation": "Score 70%–84%: Good grasp. Recommend intermediate exercise sets and spaced revision sessions to solidify mastery.",
+          "recommendedAction": "Intermediate Problem Sets & Spaced Revision"
+        },
+        {
+          "id": "subj-maths-t2",
+          "name": "Eigenvalues, Eigenvectors & Cayley-Hamilton",
+          "subjectId": "subj-maths",
+          "subjectName": "Engineering Mathematics",
+          "score": 68,
+          "attempts": 3,
+          "lastAssessed": "2026-10-09",
+          "status": "weak",
+          "recommendation": "Score 40%–69%: Needs reinforcement. Recommend targeted practice questions, debugging exercises, and additional explanations.",
+          "recommendedAction": "Targeted Practice & Guided Problem Solving"
+        },
+        {
+          "id": "subj-maths-t3",
+          "name": "Differential Calculus & Mean Value Theorems",
+          "subjectId": "subj-maths",
+          "subjectName": "Engineering Mathematics",
+          "score": 75,
+          "attempts": 4,
+          "lastAssessed": "2026-10-08",
+          "status": "proficient",
+          "recommendation": "Score 70%–84%: Good grasp. Recommend intermediate exercise sets and spaced revision sessions to solidify mastery.",
+          "recommendedAction": "Intermediate Problem Sets & Spaced Revision"
+        },
+        {
+          "id": "subj-maths-t4",
+          "name": "Multiple Integrals: Double & Triple Integrals",
+          "subjectId": "subj-maths",
+          "subjectName": "Engineering Mathematics",
+          "score": 48,
+          "attempts": 3,
+          "lastAssessed": "2026-10-12",
+          "status": "weak",
+          "recommendation": "Score 40%–69%: Needs reinforcement. Recommend targeted practice questions, debugging exercises, and additional explanations.",
+          "recommendedAction": "Targeted Practice & Guided Problem Solving"
+        },
+        {
+          "id": "subj-maths-t5",
+          "name": "Vector Calculus: Gradient, Divergence & Curl",
+          "subjectId": "subj-maths",
+          "subjectName": "Engineering Mathematics",
+          "score": 58,
+          "attempts": 2,
+          "lastAssessed": "2026-10-10",
+          "status": "weak",
+          "recommendation": "Score 40%–69%: Needs reinforcement. Recommend targeted practice questions, debugging exercises, and additional explanations.",
+          "recommendedAction": "Targeted Practice & Guided Problem Solving"
+        }
+      ]
+    },
+    {
+      "id": "subj-physics",
+      "name": "Engineering Physics",
+      "code": "PH101",
+      "category": "Physical Sciences",
+      "description": "Wave optics, interference, lasers, fiber optics, quantum mechanics, and semiconductor physics.",
+      "progressPercent": 73,
+      "topics": [
+        {
+          "id": "subj-physics-t1",
+          "name": "Interference & Diffraction of Light",
+          "subjectId": "subj-physics",
+          "subjectName": "Engineering Physics",
+          "score": 84,
+          "attempts": 3,
+          "lastAssessed": "2026-10-07",
+          "status": "proficient",
+          "recommendation": "Score 70%–84%: Good grasp. Recommend intermediate exercise sets and spaced revision sessions to solidify mastery.",
+          "recommendedAction": "Intermediate Problem Sets & Spaced Revision"
+        },
+        {
+          "id": "subj-physics-t2",
+          "name": "Lasers & Optical Fiber Communication",
+          "subjectId": "subj-physics",
+          "subjectName": "Engineering Physics",
+          "score": 76,
+          "attempts": 3,
+          "lastAssessed": "2026-10-09",
+          "status": "proficient",
+          "recommendation": "Score 70%–84%: Good grasp. Recommend intermediate exercise sets and spaced revision sessions to solidify mastery.",
+          "recommendedAction": "Intermediate Problem Sets & Spaced Revision"
+        },
+        {
+          "id": "subj-physics-t3",
+          "name": "Quantum Mechanics & Schrödinger Wave Equation",
+          "subjectId": "subj-physics",
+          "subjectName": "Engineering Physics",
+          "score": 52,
+          "attempts": 4,
+          "lastAssessed": "2026-10-11",
+          "status": "weak",
+          "recommendation": "Score 40%–69%: Needs reinforcement. Recommend targeted practice questions, debugging exercises, and additional explanations.",
+          "recommendedAction": "Targeted Practice & Guided Problem Solving"
+        },
+        {
+          "id": "subj-physics-t4",
+          "name": "Electromagnetic Theory & Maxwell Equations",
+          "subjectId": "subj-physics",
+          "subjectName": "Engineering Physics",
+          "score": 66,
+          "attempts": 3,
+          "lastAssessed": "2026-10-10",
+          "status": "weak",
+          "recommendation": "Score 40%–69%: Needs reinforcement. Recommend targeted practice questions, debugging exercises, and additional explanations.",
+          "recommendedAction": "Targeted Practice & Guided Problem Solving"
+        },
+        {
+          "id": "subj-physics-t5",
+          "name": "Semiconductors & P-N Junction Physics",
+          "subjectId": "subj-physics",
+          "subjectName": "Engineering Physics",
+          "score": 88,
+          "attempts": 4,
+          "lastAssessed": "2026-10-06",
+          "status": "mastered",
+          "recommendation": "Score 85%+: Strong mastery. Recommend advanced application exercises or periodic review assessment to maintain retention.",
+          "recommendedAction": "Advanced Synthesis & Periodic Maintenance Quiz"
+        }
+      ]
+    }
+  ],
+  "studyPlan": [
+    {
+      "id": "plan-1",
+      "date": "2026-10-14",
+      "title": "Master Pointer Dereferencing & Memory Addresses",
+      "subject": "C Programming",
+      "topic": "Pointers & Dynamic Memory Allocation",
+      "estimatedMinutes": 30,
+      "type": "lesson",
+      "status": "pending",
+      "priority": "high",
+      "reason": "Critical Weakness (<40% on recent quiz): Requires foundational memory mental-model review."
+    },
+    {
+      "id": "plan-2",
+      "date": "2026-10-14",
+      "title": "Interactive Practice: 5 Pointer Arithmetic Problems",
+      "subject": "C Programming",
+      "topic": "Pointers & Dynamic Memory Allocation",
+      "estimatedMinutes": 20,
+      "type": "practice",
+      "status": "pending",
+      "priority": "high",
+      "reason": "Apply learned rules on array-pointer equivalence and pointer incrementing."
+    },
+    {
+      "id": "plan-3",
+      "date": "2026-10-14",
+      "title": "Multiple Integrals: Region of Integration Change",
+      "subject": "Engineering Mathematics",
+      "topic": "Multiple Integrals: Double & Triple Integrals",
+      "estimatedMinutes": 25,
+      "type": "revision",
+      "status": "pending",
+      "priority": "medium",
+      "reason": "Recent score 48%: Scheduled for Day-2 spaced repetition review."
+    },
+    {
+      "id": "plan-4",
+      "date": "2026-10-14",
+      "title": "1-D Infinite Potential Well Guided Quiz",
+      "subject": "Engineering Physics",
+      "topic": "Quantum Mechanics & Schrödinger Wave Equation",
+      "estimatedMinutes": 15,
+      "type": "quiz",
+      "status": "pending",
+      "priority": "medium",
+      "reason": "Targeted checkpoint to test boundary condition calculations."
+    }
+  ],
+  "revisionQueue": [
+    {
+      "id": "rev-1",
+      "topicId": "subj-c-t5",
+      "topicName": "Pointers & Dynamic Memory Allocation",
+      "subjectName": "C Programming",
+      "score": 38,
+      "dueDate": "2026-10-14",
+      "intervalDays": 1,
+      "lastReviewedDate": "2026-10-12",
+      "status": "pending",
+      "priority": "high"
+    },
+    {
+      "id": "rev-2",
+      "topicId": "subj-maths-t4",
+      "topicName": "Multiple Integrals: Double & Triple Integrals",
+      "subjectName": "Engineering Mathematics",
+      "score": 48,
+      "dueDate": "2026-10-14",
+      "intervalDays": 2,
+      "lastReviewedDate": "2026-10-12",
+      "status": "pending",
+      "priority": "medium"
+    },
+    {
+      "id": "rev-3",
+      "topicId": "subj-physics-t3",
+      "topicName": "Quantum Mechanics & Schrödinger Wave Equation",
+      "subjectName": "Engineering Physics",
+      "score": 52,
+      "dueDate": "2026-10-15",
+      "intervalDays": 3,
+      "lastReviewedDate": "2026-10-11",
+      "status": "pending",
+      "priority": "medium"
+    },
+    {
+      "id": "rev-4",
+      "topicId": "subj-python-t4",
+      "topicName": "OOP Concepts: Classes & Inheritance",
+      "subjectName": "Python Programming",
+      "score": 62,
+      "dueDate": "2026-10-16",
+      "intervalDays": 4,
+      "lastReviewedDate": "2026-10-11",
+      "status": "pending",
+      "priority": "low"
+    }
+  ],
+  "quizHistory": [
+    {
+      "id": "q-hist-1",
+      "title": "C Pointers & Memory Address Basics",
+      "subject": "C Programming",
+      "topic": "Pointers & Dynamic Memory Allocation",
+      "score": 38,
+      "totalQuestions": 5,
+      "correctAnswers": 2,
+      "difficulty": "Intermediate",
+      "completedAt": "2026-10-12T18:30:00.000Z",
+      "isSample": true,
+      "questions": [
+        {
+          "question": "What is the output of declaring 'int *ptr;' without initialization and immediately printing '*ptr'?",
+          "options": [
+            "Prints 0",
+            "Prints null address",
+            "Undefined behavior / Segmentation fault (dereferencing wild pointer)",
+            "Compile time error"
+          ],
+          "userAnswer": 0,
+          "correctAnswer": 2,
+          "explanation": "An uninitialized pointer in C holds garbage memory address. Dereferencing it (*ptr) invokes undefined behavior, often crashing with a segmentation fault.",
+          "isCorrect": false
+        },
+        {
+          "question": "If 'int arr[5] = {10, 20, 30, 40, 50};', what does '*(arr + 2)' evaluate to?",
+          "options": [
+            "10",
+            "20",
+            "30",
+            "Address of element 2"
+          ],
+          "userAnswer": 2,
+          "correctAnswer": 2,
+          "explanation": "'arr' decays to a pointer to arr[0]. '(arr + 2)' points to arr[2], so '*(arr + 2)' accesses 30.",
+          "isCorrect": true
+        },
+        {
+          "question": "Which C standard library function frees dynamically allocated heap memory?",
+          "options": [
+            "delete()",
+            "free()",
+            "dispose()",
+            "dealloc()"
+          ],
+          "userAnswer": 1,
+          "correctAnswer": 1,
+          "explanation": "In C, free() in stdlib.h deallocates memory allocated by malloc(), calloc(), or realloc().",
+          "isCorrect": true
+        },
+        {
+          "question": "What happens if you malloc(sizeof(int) * 10) and lose the pointer reference without calling free()?",
+          "options": [
+            "Automatic garbage collection",
+            "Memory leak",
+            "Heap overflow immediately",
+            "Buffer overflow"
+          ],
+          "userAnswer": 0,
+          "correctAnswer": 1,
+          "explanation": "C lacks automatic garbage collection. Losing heap pointer addresses causes a memory leak.",
+          "isCorrect": false
+        },
+        {
+          "question": "What is the type of '&ptr' if 'int *ptr;'?",
+          "options": [
+            "int",
+            "int*",
+            "int** (pointer to a pointer)",
+            "void*"
+          ],
+          "userAnswer": 1,
+          "correctAnswer": 2,
+          "explanation": "'ptr' is an int*. The address-of operator '&' on 'ptr' yields 'int**' (pointer to pointer).",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "q-hist-2",
+      "title": "Multiple Integrals & Coordinate Systems",
+      "subject": "Engineering Mathematics",
+      "topic": "Multiple Integrals: Double & Triple Integrals",
+      "score": 48,
+      "totalQuestions": 5,
+      "correctAnswers": 2,
+      "difficulty": "Intermediate",
+      "completedAt": "2026-10-12T11:15:00.000Z",
+      "isSample": true
+    },
+    {
+      "id": "q-hist-3",
+      "title": "Quantum Wavefunctions & Probability Density",
+      "subject": "Engineering Physics",
+      "topic": "Quantum Mechanics & Schrödinger Wave Equation",
+      "score": 52,
+      "totalQuestions": 5,
+      "correctAnswers": 3,
+      "difficulty": "Intermediate",
+      "completedAt": "2026-10-11T16:45:00.000Z",
+      "isSample": true
+    },
+    {
+      "id": "q-hist-4",
+      "title": "Variables, Expressions & Syntax in C",
+      "subject": "C Programming",
+      "topic": "Variables, Data Types & Operators",
+      "score": 88,
+      "totalQuestions": 5,
+      "correctAnswers": 4,
+      "difficulty": "Beginner",
+      "completedAt": "2026-10-10T14:20:00.000Z",
+      "isSample": true
+    },
+    {
+      "id": "q-hist-5",
+      "title": "Python Data Structures: Lists & Dictionaries",
+      "subject": "Python Programming",
+      "topic": "Lists, Tuples, Sets & Dictionaries",
+      "score": 85,
+      "totalQuestions": 5,
+      "correctAnswers": 4,
+      "difficulty": "Intermediate",
+      "completedAt": "2026-10-09T17:00:00.000Z",
+      "isSample": true
+    }
+  ],
+  "activityLogs": [
+    {
+      "id": "act-1",
+      "type": "quiz",
+      "description": "Completed C Pointers & Memory Address Basics Quiz (Score: 38%)",
+      "subject": "C Programming",
+      "timestamp": "2026-10-12T18:30:00.000Z",
+      "score": 38
+    },
+    {
+      "id": "act-2",
+      "type": "study_plan",
+      "description": "System updated recommendations: Flagged C Pointers as Critical Weakness (<40%)",
+      "subject": "C Programming",
+      "timestamp": "2026-10-12T18:31:00.000Z"
+    },
+    {
+      "id": "act-3",
+      "type": "quiz",
+      "description": "Completed Multiple Integrals Checkpoint Quiz (Score: 48%)",
+      "subject": "Engineering Mathematics",
+      "timestamp": "2026-10-12T11:15:00.000Z",
+      "score": 48
+    },
+    {
+      "id": "act-4",
+      "type": "tutor",
+      "description": "Consulted AI Tutor on 'Why does Schrödinger equation use complex numbers?'",
+      "subject": "Engineering Physics",
+      "timestamp": "2026-10-11T20:10:00.000Z"
+    },
+    {
+      "id": "act-5",
+      "type": "revision",
+      "description": "Marked 'Variables & Operators' review completed",
+      "subject": "C Programming",
+      "timestamp": "2026-10-10T15:00:00.000Z"
+    }
+  ],
+  "lastUpdated": "2026-10-14T07:47:03.634Z"
+}

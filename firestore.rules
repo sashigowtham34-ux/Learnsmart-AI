@@ -1,0 +1,129 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 1. Global Default-Deny Catch-All
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // Entity Validation Helpers
+    function isValidUserProfile(data, userId) {
+      return data.keys().hasAll(['id', 'name', 'email', 'course', 'college', 'semester']) &&
+             data.keys().hasOnly(['id', 'name', 'email', 'course', 'college', 'semester', 'preferredLanguage', 'explanationLevel', 'dailyStudyTimeMinutes', 'examName', 'examDate', 'createdAt', 'updatedAt', 'avatarUrl', 'enrolledSubjects', 'learningGoals', 'notificationSettings', 'isSampleData']) &&
+             data.id == userId &&
+             data.name is string && data.name.size() >= 2 && data.name.size() <= 100 &&
+             data.email is string && data.email.size() >= 5 && data.email.size() <= 128 &&
+             data.course is string && data.course.size() <= 120 &&
+             data.college is string && data.college.size() <= 150 &&
+             data.semester is string && data.semester.size() <= 50;
+    }
+
+    function isValidQuizAttempt(data, userId) {
+      return data.keys().hasAll(['id', 'userId', 'subject', 'topic', 'score', 'totalQuestions', 'correctAnswers', 'completedAt']) &&
+             data.keys().hasOnly(['id', 'userId', 'title', 'subject', 'topic', 'score', 'totalQuestions', 'correctAnswers', 'difficulty', 'completedAt', 'isSample', 'questions']) &&
+             data.userId == userId &&
+             data.score is int && data.score >= 0 && data.score <= 100 &&
+             data.totalQuestions is int && data.totalQuestions > 0 && data.totalQuestions <= 100 &&
+             data.correctAnswers is int && data.correctAnswers >= 0 && data.correctAnswers <= data.totalQuestions &&
+             data.subject is string && data.subject.size() <= 100 &&
+             data.topic is string && data.topic.size() <= 100;
+    }
+
+    function isValidStudyPlanActivity(data, userId) {
+      return data.keys().hasAll(['id', 'userId', 'date', 'title', 'subject', 'topic', 'estimatedMinutes', 'type', 'status', 'priority', 'reason']) &&
+             data.keys().hasOnly(['id', 'userId', 'date', 'title', 'subject', 'topic', 'estimatedMinutes', 'type', 'status', 'priority', 'reason', 'completedAt']) &&
+             data.userId == userId &&
+             data.date is string && data.date.size() <= 30 &&
+             data.title is string && data.title.size() <= 180 &&
+             data.estimatedMinutes is int && data.estimatedMinutes >= 5 && data.estimatedMinutes <= 480 &&
+             data.type in ['lesson', 'practice', 'revision', 'quiz'] &&
+             data.status in ['pending', 'completed', 'postponed'] &&
+             data.priority in ['high', 'medium', 'low'] &&
+             data.reason is string && data.reason.size() <= 300;
+    }
+
+    function isValidTopicMastery(data, userId) {
+      return data.keys().hasAll(['id', 'userId', 'subjectId', 'subjectName', 'topicName', 'score', 'status']) &&
+             data.keys().hasOnly(['id', 'userId', 'subjectId', 'subjectName', 'topicName', 'score', 'attempts', 'lastAssessed', 'status', 'recommendation', 'recommendedAction']) &&
+             data.userId == userId &&
+             data.score is int && data.score >= 0 && data.score <= 100 &&
+             data.status in ['critical', 'weak', 'proficient', 'mastered'] &&
+             data.subjectName is string && data.subjectName.size() <= 100 &&
+             data.topicName is string && data.topicName.size() <= 100;
+    }
+
+    // 2. Student Private Profile
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow list: if false; // Blanket enumeration of student profiles is strictly prohibited
+
+      allow create: if isOwner(userId) && isValidId(userId) && isValidUserProfile(incoming(), userId);
+      allow update: if isOwner(userId) && isValidId(userId) &&
+                       isValidUserProfile(incoming(), userId) &&
+                       incoming().id == existing().id;
+      allow delete: if isOwner(userId) && isValidId(userId);
+
+      // 3. Private Subcollection: Quiz Attempts
+      match /quizAttempts/{quizId} {
+        allow get: if isOwner(userId) && isValidId(userId) && isValidId(quizId);
+        allow list: if isOwner(userId) && isValidId(userId);
+
+        allow create: if isOwner(userId) && isValidId(userId) && isValidId(quizId) &&
+                         isValidQuizAttempt(incoming(), userId);
+        allow update: if isOwner(userId) && isValidId(userId) && isValidId(quizId) &&
+                         isValidQuizAttempt(incoming(), userId) &&
+                         incoming().userId == existing().userId;
+        allow delete: if isOwner(userId) && isValidId(userId) && isValidId(quizId);
+      }
+
+      // 4. Private Subcollection: Study Plan Activities
+      match /studyPlans/{planId} {
+        allow get: if isOwner(userId) && isValidId(userId) && isValidId(planId);
+        allow list: if isOwner(userId) && isValidId(userId);
+
+        allow create: if isOwner(userId) && isValidId(userId) && isValidId(planId) &&
+                         isValidStudyPlanActivity(incoming(), userId);
+        allow update: if isOwner(userId) && isValidId(userId) && isValidId(planId) &&
+                         isValidStudyPlanActivity(incoming(), userId) &&
+                         incoming().userId == existing().userId;
+        allow delete: if isOwner(userId) && isValidId(userId) && isValidId(planId);
+      }
+
+      // 5. Private Subcollection: Topic Mastery Records
+      match /topicMastery/{topicId} {
+        allow get: if isOwner(userId) && isValidId(userId) && isValidId(topicId);
+        allow list: if isOwner(userId) && isValidId(userId);
+
+        allow create: if isOwner(userId) && isValidId(userId) && isValidId(topicId) &&
+                         isValidTopicMastery(incoming(), userId);
+        allow update: if isOwner(userId) && isValidId(userId) && isValidId(topicId) &&
+                         isValidTopicMastery(incoming(), userId) &&
+                         incoming().userId == existing().userId;
+        allow delete: if isOwner(userId) && isValidId(userId) && isValidId(topicId);
+      }
+    }
+  }
+}
